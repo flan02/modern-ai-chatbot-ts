@@ -2,20 +2,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
-import { useChat } from "ai/react"
+import { Message, useChat } from "ai/react"
 import { Messages } from "./Messages"
 import { ChatInput } from "./ChatInput"
 
 type Props = {
   sessionId: string
+  initialMessages: Message[]
 }
 
-const ChatWrapper = ({ sessionId }: Props) => {
+const ChatWrapper = ({ sessionId, initialMessages }: Props) => {
 
   // * PROVIDED BY VERCEL SDK
   const { messages, handleInputChange, input, handleSubmit, setInput } = useChat({
     api: "/api/chat-stream",
-    body: { sessionId }
+    body: { sessionId },
+    initialMessages: initialMessages
   })
 
   return (
