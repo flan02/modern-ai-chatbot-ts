@@ -63,7 +63,7 @@ const UrlPage = async ({ params }: PageProps) => {
       content: true,
       role: true
     },
-    take: 10
+    take: 50
   })
 
   /* 

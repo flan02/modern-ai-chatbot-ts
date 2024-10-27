@@ -7,6 +7,7 @@ interface MessagesProps {
 }
 
 export const Messages = ({ messages }: MessagesProps) => {
+  //console.log("real time messages:", messages);
   return (
     <div className="flex max-h-[calc(100vh-3.5rem-7rem)] flex-1 flex-col overflow-y-auto">
       {messages.length ? (
